@@ -30,14 +30,17 @@ const Signup = () => {
     setFieldErrors([]);
     setSuccess("");
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          age: formData.age ? Number(formData.age) : formData.age,
-        }),
-      });
+      const res = await fetch(
+        "https://binaryvedaassignment-production.up.railway.app/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...formData,
+            age: formData.age ? Number(formData.age) : formData.age,
+          }),
+        }
+      );
       const result = await res.json();
       if (!res.ok) {
         setError(result.msg || result.message || "Signup failed");

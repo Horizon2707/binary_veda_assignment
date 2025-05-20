@@ -27,11 +27,14 @@ const Login = () => {
     setFieldErrors([]);
     setSuccess("");
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://binaryvedaassignment-production.up.railway.app/api/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const result = await res.json();
       if (!res.ok) {
         setError(result.msg || result.message || "Login failed");
