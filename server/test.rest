@@ -18,3 +18,12 @@ Content-Type: application/json
     "email":"kshitij2707@gmail.com",
     "password":"kshitij2707"
 }
+
+### Live server login
+POST https://binary-veda-assignment.onrender.com/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"kshitij2707@gmail.com",
+    "password":"kshitij2707"
+}
