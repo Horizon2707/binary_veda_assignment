@@ -7,8 +7,9 @@ exports.signup = async (req, res) => {
   if (!email || !password || !name || !age || !address) {
     return res.status(400).json({ msg: "All fields are required." });
   }
+
   const validation = signupSchema.safeParse(req.body);
-  console.log("Validation result:", validation);
+
   if (!validation.success) {
     return res.status(400).json({
       msg: "Validation failed",
@@ -48,9 +49,9 @@ exports.login = async (req, res) => {
   if (!email || !password) {
     return res.status(400).json({ msg: "All fields are required." });
   }
+
   const validation = loginSchema.safeParse(req.body);
 
-  console.log("Validation result:", validation);
   if (!validation.success) {
     return res.status(400).json({
       msg: "Validation failed",

@@ -60,10 +60,15 @@ const Login = () => {
         </Typography>
       )}
       {fieldErrors.length > 0 && (
-        <Box mb={1}>
+        <Box mb={1} flex={1} display="flex" flexDirection="column">
           {fieldErrors.map((err, idx) => (
-            <Typography color="error" key={idx} fontSize={14}>
-              {err.field}: {err.message}
+            <Typography
+              color="error"
+              key={idx}
+              fontSize={14}
+              alignSelf={"center"}
+            >
+              {err.message}
             </Typography>
           ))}
         </Box>
